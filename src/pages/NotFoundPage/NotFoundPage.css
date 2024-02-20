@@ -1,0 +1,23 @@
+.not-found-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.not-found-page__title {
+    color: #fff;
+    font-size: 30px;
+}
+.not-found-page__btn {
+    margin: 0;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    border: 1px solid rgb(255, 152, 0);
+    background: transparent;
+    color: #fff;
+    opacity: 1;
+}
+.not-found-page__btn:hover {
+    opacity: 0.7;
+}

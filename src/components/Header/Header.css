@@ -1,0 +1,15 @@
+.header {
+width: 100%;
+    background: #ffffff;
+    margin: 0 auto;
+    padding: 0 15px;
+    min-height: 8vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.header__logo {
+    width: 150px;
+}
