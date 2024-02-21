@@ -1,14 +1,14 @@
 import './Header.css';
-// @ts-ignore
-import logo from '../../assets/icons/rick-and-morty-logo.svg';
+
+import logo from '../../assets/icons/rick-and-morty-logo.svg'
 import {Link} from "react-router-dom";
 
 const Header = () => {
     return (
         <header className='header'>
-            {/*<Link to={}>*/}
+            <Link to={'/'}>
                 <img src={logo} alt="logo" className='header__logo' />
-            {/*</Link>*/}
+            </Link>
         </header >
     );
 };

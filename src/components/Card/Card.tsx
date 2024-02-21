@@ -1,36 +1,54 @@
 import "./Card.css";
 import {Link} from "react-router-dom";
+import {FC} from"react";
+import {CardType} from "../../entities/Cards/model/types/cards";
+import {useAppDispatch} from "../../StoreProvider/config/store";
+import {addLike, deleteCard, removeLike} from "../../entities/Cards/model/slice/cardsSlice";
 
-const Card = () => {
+interface CardProps {
+    card: CardType;
+    isLiked?: boolean;
+}
 
+const Card : FC<CardProps>= ({card}) => {
+
+    const dispatch = useAppDispatch()
+
+    const handleLikeClick = () => {
+        if (!card.isLiked) {
+            dispatch(addLike(card.id));
+        } else {
+            dispatch(removeLike(card.id));
+        }
+    };
+
+    const handleDeleteClick =()=>{
+        dispatch(deleteCard(card.id))
+    }
     
     return (
         <li
             className='card'
-            key={1}>
+            >
             <Link
-                to=''
+                to={`/cards/${card.id}`}
                 className='cards__link'
                 // onClick={}
             >
                 <img
-                    src={'/'}
-                    alt="sad"
+                    src={card.image}
+                    alt="Картинка"
                     className='card__img'/>
 
-                <h2 className='card__title'>111</h2>
-                <div className='card__container'>
-                    <p className='card__description'></p>
-                </div>
+                <h2 className='card__title'>{card.name}</h2>
             </Link>
             <button
                 className='button button__delete'
-                // onClick={}
+                onClick={handleDeleteClick}
             />
             <button
-                className='button button__like'
-                // className={'button button__like button__like_active' : 'button button__like'}
-                // onClick={}
+                className={`button button__like ${card.isLiked ? "button__like_active" : ""}`}
+                onClick={handleLikeClick}
             />
         </li>
     );
