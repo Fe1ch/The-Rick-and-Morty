@@ -18,8 +18,8 @@
 }
 
 .card__title {
-    /* width: 100%; */
-    margin: 10px 0 0 5px;
+     width: 88%;
+    margin: 10px 0 10px 5px;
     color: #000;
     font-size: 22px;
     line-height: 29px;
@@ -66,7 +66,7 @@
     opacity: 1;
     transition: all 1s ease;
     position: absolute;
-    top: 298px;
+    top: 296px;
     right: 5px;
     border: none;
     outline: none;

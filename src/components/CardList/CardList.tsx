@@ -39,6 +39,7 @@ export const CardList: React.FC = () => {
     return (
         <section className='cards'>
             <FilterCheckbox/>
+            {filteredCards.length === 0 && <p className='cards__paragraph'>Вам пока ни кто не понравился</p>}
             <ul className='cards__list'>
                 {filteredCards && filteredCards.map(card => (
                     <Card key={card.id} card={card}/>

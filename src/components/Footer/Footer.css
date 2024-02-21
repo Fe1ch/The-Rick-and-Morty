@@ -42,3 +42,13 @@
 .footer__link:not(:last-child) {
     margin: 0 20px 0 0;
 }
+
+@media screen and (max-width: 470px) {
+    .footer__container {
+        padding: 35px 30px 20px;
+    }
+    .footer__copyright,
+    .footer__link{
+        font-size: 12px;
+    }
+}
